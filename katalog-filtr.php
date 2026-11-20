@@ -20,7 +20,23 @@ else
 {
     //funkcja filtruje po kategorii
     $lista = filtrujPoKategorii($produkty, $filtr);
-
 }
 
 ?>
+<p>Znaleziono: <?php echo count($lista); ?> produktów</p>
+<table>
+    <tr>
+        <th>Nazwa</th>
+        <th>Cena</th>
+        <th>Stan magazynu</th>
+    </tr>
+    <?php foreach($lista as $produkt): ?>
+        <?php 
+        echo '<tr>
+            <td>' . $produkt['nazwa'] . '</td>
+            <td>' . formatCena($produkt['cena']) . '</td>
+            <td>' . $produkt['kategoria'] . '</td>
+        </tr>' 
+        ?>
+    <?php endforeach; ?>
+</table>
