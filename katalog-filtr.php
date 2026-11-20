@@ -23,6 +23,17 @@ else
 }
 
 ?>
+<!-- method GET, puste action - dane trafiaja przez URL do tego samego pliku -->
+<form method="get" action="">
+    <label for="filtr">Filtruj po kategorii:</label>
+    <select id="filtr" name="filtr">
+        <option value="">Wszystkie</option>
+        <option value="Podzespoły">Podzespoły</option>
+        <option value="Peryferia">Peryferia</option>
+        <option value="Akcesoria">Akcesoria</option>
+    </select>
+    <button type="submit">Filtruj</button>
+</form>
 <p>Znaleziono: <?php echo count($lista); ?> produktów</p>
 <table>
     <tr>

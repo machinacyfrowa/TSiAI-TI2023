@@ -58,7 +58,7 @@ function filtrujPoKategorii(array $produkty, string $kategoria): array
     $wynik = [];
     foreach($produkty as $produkt)
     {
-        if($produkt['kategoria'] === $kategoria) //zakładamy, że kategoria jest w indeksie 3
+        if($produkt['kategoria'] === $kategoria) 
             $wynik[] = $produkt;
     }
     return $wynik;
