@@ -46,7 +46,7 @@ if ($wyslano) {
     if($opis === "") {
         $bledy['opis'] = "Opis usterki jest wymagany.";
     }
-    if(mb_strlen($opis) < 10) {
+    else if(mb_strlen($opis) < 10) {
         $bledy['opis'] = "Opis usterki musi mieć co najmniej 10 znaków.";
     }
 
