@@ -80,25 +80,7 @@ if ($wyslano) {
     <!-- Nagłówek strony -->
     <h1>Zgłoś naprawę</h1>
 
-    <!-- Warunkowo wyświetla komunikat potwierdzenia tylko jeśli formularz został wysłany -->
-    <?php if ($wyslano) { ?>
-        <!-- Podziękowanie z danymi wysłanymi przez użytkownika -->
-        <p>
-            Dziękujemy,
-            <!-- Wyświetla imię wysłane przez użytkownika -->
-            <?php echo e($imie); ?>.
-            Zgłoszenie:
-            <!-- Wyświetla typ sprzętu -->
-            <?php echo $sprzet; ?>
-            <!-- Jeśli naprawa jest pilna, dodaj napis "(pilne)" na koniec -->
-            <?php echo $pilne ? " (pilne)" : ""; ?>.
-        </p>
-        <!-- Informacja do jakich kontaktów serwis się odezwie -->
-        <p>Odpowiemy na adres:
-            <!-- Wyświetla email wysłany przez użytkownika -->
-            <?php echo $email; ?>
-        </p>
-    <?php } ?>
+
 
     <!-- Formularz do zgłoszenia naprawy -->
     <form method="post" action="">
@@ -157,6 +139,25 @@ if ($wyslano) {
         <button type="submit" class="btn btn-primary w-100">Wyślij</button>
         <!-- type="submit" — kliknięcie wysyła dane formularza metodą POST -->
     </form>
+        <!-- Warunkowo wyświetla komunikat potwierdzenia tylko jeśli formularz został wysłany -->
+        <?php if ($wyslano) { ?>
+            <!-- Podziękowanie z danymi wysłanymi przez użytkownika -->
+            <p>
+                Dziękujemy,
+                <!-- Wyświetla imię wysłane przez użytkownika -->
+                <?php echo e($imie); ?>.
+                Zgłoszenie:
+                <!-- Wyświetla typ sprzętu -->
+                <?php echo e($sprzet); ?>
+                <!-- Jeśli naprawa jest pilna, dodaj napis "(pilne)" na koniec -->
+                <?php echo $pilne ? " (pilne)" : ""; ?>.
+            </p>
+            <!-- Informacja do jakich kontaktów serwis się odezwie -->
+            <p>Odpowiemy na adres:
+                <!-- Wyświetla email wysłany przez użytkownika -->
+                <?php echo e($email); ?>
+            </p>
+        <?php } ?>
     </div>
 </body>
 
