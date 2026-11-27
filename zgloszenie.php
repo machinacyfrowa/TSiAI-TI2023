@@ -140,7 +140,17 @@ if ($wyslano) {
         <!-- type="submit" — kliknięcie wysyła dane formularza metodą POST -->
     </form>
         <!-- Warunkowo wyświetla komunikat potwierdzenia tylko jeśli formularz został wysłany -->
-        <?php if ($wyslano) { ?>
+        <?php if ($wyslano) { 
+            if(count($bledy) > 0) {
+                echo "<p>Wystąpiły błędy w formularzu.</p>";
+                echo "<ul>";
+                foreach($bledy as $blad) {
+                    echo "<li>" . e($blad) . "</li>";
+                }
+                echo "</ul>";
+            } else {
+            ?>
+            
             <!-- Podziękowanie z danymi wysłanymi przez użytkownika -->
             <p>
                 Dziękujemy,
@@ -157,7 +167,7 @@ if ($wyslano) {
                 <!-- Wyświetla email wysłany przez użytkownika -->
                 <?php echo e($email); ?>
             </p>
-        <?php } ?>
+        <?php } } ?>
     </div>
 </body>
 
