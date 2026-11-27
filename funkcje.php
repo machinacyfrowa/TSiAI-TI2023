@@ -63,5 +63,10 @@ function filtrujPoKategorii(array $produkty, string $kategoria): array
     }
     return $wynik;
 }
-
+//funkcja "czyści" tekst pod kątem HTML, zamienia znaki specjalne na encje HTML
+//przyjmuje tekst jako argument i zwraca go w bezpiecznej formie HTML
+function e(string $tekst): string
+{
+    return htmlspecialchars($tekst, ENT_QUOTES, 'UTF-8');
+}
 ?>

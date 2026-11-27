@@ -1,4 +1,5 @@
 <?php
+require_once 'funkcje.php';
 /**
  * zgloszenie.php — Formularz zgłoszenia naprawy sprzętu
  * 
@@ -52,7 +53,7 @@ if ($wyslano) {
     <p>
         Dziękujemy, 
         <!-- Wyświetla imię wysłane przez użytkownika -->
-        <?php echo $imie; ?>. 
+        <?php echo e($imie); ?>. 
         Zgłoszenie: 
         <!-- Wyświetla typ sprzętu -->
         <?php echo $sprzet; ?>
